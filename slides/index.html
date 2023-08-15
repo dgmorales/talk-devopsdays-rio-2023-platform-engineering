@@ -13,11 +13,22 @@
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<style>
+		.footnote {
+			font-size: xx-small;
+			text-align: right;
+		}
+		.source {
+			font-size: small;
+			text-align: right;
+		}
+	</style>
 </head>
 
 <body>
 	<div class="reveal">
 		<div class="slides">
+
 			<section>
 				<h2>Do deploy manual ao Platform Engineering</h2>
 				<p>Como chegamos aqui?<br />E agora?</p>
@@ -34,7 +45,380 @@
 					</small>
 				</p>
 			</section>
-			<section>Slide 2</section>
+
+			<section>
+				<h2>A linha do tempo</h2>
+			</section>
+
+			<section>
+
+				<section>
+					<h2>2001: O Manifesto Ágil</h2>
+				</section>
+
+				<section data-background="./images/old-book-background.jpeg">
+					<small>
+						<p><em>Em um Resort de Ski nos Estados Unidos, os pioneiros da agilidade escreveram ...</em></p>
+					</small>
+					<br/>
+					<ul>
+						<li><b>Individuals and interactions</b> over <em>processes and tools</em></li>
+						<li><b>Working software</b> over <em>comprehensive documentation</em></li>
+						<li><b>Customer collaboration</b> over <em>contract negotiation</em></li>
+						<li><b>Responding to change</b> over <em>following a plan</em></li>
+					</ul>
+				</section>
+
+				<section>
+			  	<p>Mas a agilidade não acabou com o deploy manual. Naturalmente, ela causou <b>atrito</b>.</p>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+				<h2>2009: DevOps</h2>
+					<img src="./images/devops-infinity.png" width="600"/>
+					<p>DevOps é o resultado do impacto da agilidade na disciplina de Operações</p>
+				<br/>
+				<div class="footnote">
+					<a href="https://www.freepik.com/free-vector/blue-infinity-symbol_10604137.htm">Image by macrovector</a> on Freepik
+				</div>
+				<aside class="notes">
+					<ul>
+						<li>2009
+							<ul>
+								<li><a href="https://www.youtube.com/watch?v=LdOe18KhtT4">10+ Deploys a day</a></li>
+								<li><a href="https://legacy.devopsdays.org/events/2009-ghent/program">1o DevOpsDays em Ghent</a>, Bélgica</li>
+							</ul>
+						</li>
+					</ul>
+				</aside>
+				</section>
+
+				<section>
+					<em>
+					<p>3 Ways of DevOps</p>
+						<ul>
+							<li>System Thinking</li>
+						  <li><b>Shorten Feedback Loops</b></li>
+							<li>Continuous Learning and Experimentation</li>
+						</ul>
+					</em>
+				</section>
+
+				<section>
+				<h3>De volta para o futuro</h3>
+				<img src="./images/back-to-the-future-1.jpeg" height="280"/>
+				<p>Em 2016, em uma jovem <em>Fintech</em> no Rio de Janeiro ...</p>
+
+				<aside class="notes">
+					<ul>
+						<li>Em 2016 eu entrei na Stone, em um time para trazer práticas e fomentar uma cultura DevOps</li>
+						<li>Tínhamos há pouco colocado o GoCD no ar, o primeiro sistema de pipelines de CI/CD</li>
+						<li>Antes o deploy era manual. Dev chegava com um pen-drive com o artefato da app, cutucava o cara de ops</li>
+						<li>Era tudo on prem, e o plano era ficar no on prem na época.</li>
+						<li>Além do deploy, outros focos eram logging de aplicações (ElasticSearch), containers (Tsuru), e Infra as Code (Ansible e Terraform)</li>
+						<li>E tínhamos uma visão de produto, mas teve 2 problemas:
+							<ol>
+									<li>Cada foco ali era visto como um produto isolado, e não um conjunto integrado</li>
+									<li>Mesmo essa visão isolada de produto não sobreviveu algumas turbulências.
+										Passamos a tratar "apenas" como um serviço. Isso teve consequências que
+										eu vou retomar mais na frente.</li>
+							</ol>
+						</li>
+						<li>Caímos no time devops, anti pattern</li>
+					</ul>
+				</aside>
+				</section>
+
+			</section>
+			<section>
+				<section>
+					<h2>~2014: SRE</small></h2>
+					<img src="./images/sre-devops-cogs.png" height="300"/>
+					<blockquote>SRE is what happens when you ask a software engineer to design an operations function</blockquote>
+					<p class="source">Ben Treynor Sloss, fundador da SRE no Google</p>
+					<aside class="notes">
+						<ul>
+							<li>SRE veio substituir DevOps? Não, ele inclusive é anterior, de 2003</li>
+							<li>2003: é o início do SRE no Google</li>
+							<li>Mas pro resto do mundo ele veio depois</li>
+							<li>2014: a primeira <a href="https://www.usenix.org/conference/srecon14/program">SREcon</a></li>
+							<li>2016: o primeiro <em><a href="https://sre.google/books/">SRE book</a></em> é lançado</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<p><a href="https://sre.google/workbook/how-sre-relates/#background-on-sre">Princípios</a> SRE</p>
+					<small>
+					<ul>
+						<li>Operations Is a <b>Software Problem</b></li>
+						<li><b>Manage</b> by Service Level Objectives <b><a href="https://sre.google/workbook/implementing-slos/">(SLOs)</a></b></li>
+						<li>Work to Minimize <b>Toil</b></li>
+						<li><b>Automate</b> This Year’s Job Away</li>
+						<li>Move Fast by <b>Reducing the Cost of Failure</b></li>
+						<li><b>Share Ownership</b> with Developers</li>
+						<li>Use the <b>Same Tooling</b>, Regardless of Function or Job Title</li>
+					</ul>
+			 		</small>
+					<br/>
+					<br/>
+					<p><em>Class SRE implements DevOps</em>
+					<small>(<a href="https://sre.google/workbook/how-sre-relates/">livro</a>, <a href="https://www.youtube.com/playlist?list=PLIivdWyY5sqJrKl7D2u-gmis8h9K66qoj">vídeos</a>)</small></p>
+
+					<aside class="notes">
+					<ul>
+						<li>Como o próprio Google diz, a classe SRE implementa DevOps.</li>
+						<li>DevOps é mais aberto, tanto é que chamamos de cultura. SRE é mais prescritivo.</li>
+						<li>E de novo eu não estou listando os princípios aqui para falar de cada um deles</li>
+						<li>Estou colocando para lembrar, lembrar do que importa. Vou assumir que vocês também já ouviram falar bastante de SRE</li>
+						<li>Mas os <b>princípios são importantes!</b></li>
+						<li>A razão de ser deles</li>
+						<li>Vou dar um <b>exemplo</b>: <a href="https://sre.google/workbook/implementing-slos/">SLOs</a>.
+							<ul>
+								<li>Eles não são só um outro jeito nomear e organizar o teu monitoramento</li>
+								<li>"Manage" by SLOs não tá ali por acaso, e por isso eu destaquei ela</li>
+								<li>Eles são uma ferramenta de gestão do produto</li>
+								<li>Eles são a resposta da Google pro dilema da priorização de features vs estabilidade</li>
+								<li>Tu tem um error budget de x percento por mês.</li>
+								<li>Se tu tiver esgotado o budget ou muito perto tu vai <b>parar</b> de meter feature e vai focar em estabilidade.</li>
+							</ul>
+						</li>
+					</ul>
+				</aside>
+				</section>
+
+				<section>
+				<h3>De volta para o futuro 2</h3>
+				<img src="./images/back-to-the-future-2.webp" height="280"/>
+				<p>Em 2019, naquela mesma <em>Fintech</em> no Rio de Janeiro ...</p>
+				<aside class="notes">
+					<ul>
+						<li>A adoção de containerização e infra as code era lenta ainda,
+							e também a adoção de melhores práticas de logging e de CI/CD pelos times</li>
+						<li>Pouco skill devops ou ops nos times de dev. Acessos a produção centralizados em infra ainda.</li>
+						<li>E assim a criação de infraestrutura era ainda muita dor muito grande. Demorava muito</li>
+						<li>Tínhamos um plano de levar pessoas com um perfil mais "DevOps" para os times de dev,
+							mas tivemos dificuldades em contratar, e em focar nisso</li>
+						<li>Ao mesmo tempo, veio uma abertura para a adoção de Cloud</li>
+						<li>O plano acabou "mutando" para um plano de adoção do modelo SRE</li>
+						<li>Mas uma dificuldade central não mudou muito: pessoas</li>
+						<li>Aos poucos, o que acabou acontecendo foi mover as pessoas daquele time central "DevOps"
+							para times SRE por produto, mais próximos dos devs. Junto com nova contratações
+						<ul>
+							<li>O logging continuou sendo mantido como um produto isolado junto com outras ferramentas de observabilidade</li>
+							<li>O Tsuru acabou sendo abandonado em favor do Kubernetes
+								(abraçado pelas Clouds, padrão de fato para orquestração de containers)
+							</li>
+							<li>CI/CD era SaaS agora (Azure DevOps). "SaaS não precisa de um time mantendo ...</li>
+							<li>Pro Tip: não façam isso numa empresa grande</li>
+							<li>IaC é uma prática, não precisa de um time dono. Módulos comuns serão mantidos comunitariamente. Mais um erro.</li>
+						</ul>
+						</li>
+						<li>Ajudou em várias coisas, desafogou a criação de infra. Tornou cloud, IaC, e containers a norma, em vez do on prem (que ainda está lá)</li>
+						<li>Mas ... (descentralizou, falta de coordenaçaõ)</li>
+					</ul>
+				</aside>
+				</section>
+
+			</section>
+			<section>
+				<section>
+					<h2>Sobrecarga Cognitiva</h2>
+					<img src="./images/Information_overload_1200x630.jpg" height="350"/>
+				</section>
+
+				<section>
+					<a href="https://landscape.cncf.io/">
+					<img src="./images/cncf-landscape.png"/>
+					</a>
+					<aside class="notes">
+						<ul>
+							<li>CNCF foi fundada em 2015, junto com o Kubernetes 1.0</li>
+							<li>É a principal "casa" de novos projetos open source desde então</li>
+							<li>Mas também hospeda projetos mais antigos</li>
+						</ul>
+					</aside>
+				</section>
+
+				<!-- <section>
+					<img src="./images/cncf-started-projects-by-year.png"/>
+
+					<aside class="notes">
+						<ul>
+							<li>Cada vez mais software é criado. Mais projetos relevantes</li>
+							<li>Peguei no CSV do CNCF Landscape o campo "Github Start Commit Date"</li>
+							<li>Agreguei por ano</li>
+							<li>Números caindo no final fazem sentido porque projetos tão jovens ainda não foram doados para a CNCF</li>
+						</ul>
+					</aside>
+				</section>
+			-->
+
+				<section>
+					<p>Mas não é só um excesso de ferramentas ...</p>
+					<p>Muitos de nossos ambientes exigem <b>alto contexto</b><p>
+					<p>Dica: Low Context DevOps (<a href="https://www.youtube.com/watch?v=fv2Xtdq-Q_s">video</a>, <a href="https://www.usenix.org/publications/loginonline/low-context-devops">blog</a>)</p>
+					<aside class="notes">
+					  <p>Como sair desse buraco que a gente se meteu?</p>
+						<ul>
+						</ul>
+					</aside>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="./images/road-220058_640.jpg">
+					<h2>~202x: Platform Engineering</h2>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<aside class="notes">
+					<small>
+						<p>Vejo Platform Engineering como fundamentalmente 3 coisas:</p>
+						<ul>
+							<li>E aqui estamos, 2020 e poucos, com Platform Engineering na curva ascendente do hype</li>
+							<li>O que é isso?</li>
+						</ul>
+					</small>
+					</aside>
+				</section>
+
+				<section>
+					<small>
+					<blockquote>Platform engineering is the discipline of
+						<b>designing and building toolchains and workflows</b> that
+						<b>enable self-service</b> capabilities for software engineering
+						organizations in the cloud-native era. Platform engineers
+						provide an <b>integrated product</b> most often referred to as an
+						<b>“<a href="https://internaldeveloperplatform.org/">Internal Developer Platform</a>”</b> covering the operational
+						necessities of the entire lifecycle of an application.
+					</blockquote>
+					</small>
+					<p class="source">
+					<a href="https://platformengineering.org/blog/what-is-platform-engineering">platformengineering.org</a>
+					</p>
+				</section>
+
+				<section>
+				<p>Mas o que diabos a gente estava fazendo até agora?</p>
+				<aside class="notes">
+					<ul>
+						<li>Vários cases de DevOps já eram construções de plataformas</li>
+						<li>Lendo sobre times SRE no Google, tu vai sempre encontrar casos de plataformas internas desenvolvidas por eles</li>
+						<li>Lembra do time que eu entrei lá no início na Stone. Era basicamente um time de plataforma.</li>
+						<li>Em grande de parte, é só uma nova maneira de comunicar. E um baita hype</li>
+						<li>Uma grande oportunidade com uma nova buzzword para novos vendors</li>
+						<li>Mas duas coisas que eu vejo como realmente importantes, e me parece "novas" de certa forma</li>
+						<li>A visão de produto integrado</li>
+						<li>E o foco em atacar o problema da sobrecarga cognitiva</li>
+					</ul>
+				</aside>
+				</section>
+
+				<section>
+					<p>A plataforma é um <b>produto</b> ...</p>
+					<p>... e seus usuários são <b>clientes</b></p>
+					(team topologies link)
+					<aside class="notes">
+						<ul>Um produto ...
+							<li>Aqueles serviços SaaS são componentes deste produto</li>
+							<li>Bem como aqueles módulos IaC de uso comum</li>
+							<li>Bem como observabilidade (que inclui logging)</li>
+							<li>Alguém precisa juntar todas coisas num pacote bem integrado, bem documentado, fácil de usar, que gere valor para quem usa. E com atenção e evolução continuada</li>
+							<li>Isso é um produto (interno)</li>
+							<li>E isso provê um ...</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h3>O caminho pavimentado</h3>
+					<ul>
+						<li>Para <b>reduzir o contexto</b>,</li>
+						<li>tornar <b>fácil</b> o caminho <b>correto</b>,</li>
+						<li>e dar autonomia segura</li>
+					</ul>
+					<br/>
+					<small>
+					<p>um bom <a href="https://builtin.com/software-engineering-perspectives/platform-engineer-twilio-ask-your-developer-excerpt">case no Twillio</a></p>
+					</small>
+
+					<aside class="notes">
+					<ul>
+						<li> Para reduzir o contexto
+						<ul>
+							<li>Centralizando e organizado informação (catálogo do que existe, e documentação)</li>
+							<li>Caminhos claros para criar e manter</li>
+							<li>Opções pré-selecionadas de tecnologias, pré-configuradas para funcionarem bem juntas</li>
+						</ul>
+					 	</li>
+						<li>Tornar fácil o caminho correto
+							<ul>
+							<li>Para atender todos aqueles requisitos</li>
+							</ul>
+						</li>
+						<li>Dar autonomia com segurança (<em>guard rails</em>)</li>
+					</ul>
+					</aside>
+				</section>
+
+				<section>
+					<p>Um novo <a href="https://platformengineering.org/platform-tooling"><em>landscape</em></a> de ferramentas</p>
+					<ul>
+						<li><a href="https://backstage.io">Backstage</a></li>
+						<li><a href="https://humanitec.com/">Humanitec</a></li>
+						<li><a href="https://www.crossplane.io/">Crossplane</a></li>
+						<li><a href="https://www.atlassian.com/software/compass">Atlassian Compass</a></li>
+						<li><a href="https://www.getport.io/">Port</a></li>
+					</ul>
+					<p>Ou apenas um site de documentação.</p>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Backstage open source</li>
+							<li>Humanitec capitaneando o mercado e comunidades de Platform Engineering</li>
+							<li>Uma boa documentação com padrões a serem seguidos pelo time de desenvolvimento pode resolver boa parte do problema em alguns casos</li>
+						</ul>
+				 </aside>
+				</section>
+
+
+				<section>
+					<p>E os profissionais?</p>
+					<img src="./images/devops-is-dead.webp" height="350"/>
+
+					<aside class="notes">
+						<p>E para nós profissionais?</p>
+						<p>DevOps ou SRE vão morrer?</p>
+						<p>"O DevOps" ou "o SRE" vão perder o emprego?</p>
+					<p><b>Não é sobre ter 1 time de plataforma ...</b></p>
+					<p>Mas sobre tornar nossos times <b>construtores</b> dela.</p>
+				 </aside>
+				</section>
+			</section>
+
+			<section>
+				<h2>Obrigado!</h2>
+				<br/>
+				<p>Diego Morales</p>
+				<p>
+					<small>
+						<img src="images/Logo1.png" height="24" width="24" border="0" style="border:none;vertical-align:middle;" />
+						<img src="images/twitter-bird-white-on-blue.png" height="24" width="24" border="0"
+							style="border:none;vertical-align:middle;" />
+						<a href="http://twitter.com/dgmorales" style="vertical-align:middle;">@dgmorales</a>
+						&nbsp;
+						<img src="images/mail3.png" border="0" style="border:none;vertical-align:middle;" />
+						<a href="mailto:dmorales@stone.com.br" style="vertical-align:middle;">dmorales@stone.com.br</a>
+					</small>
+				</p>
+			</section>
+
 		</div>
 	</div>
 
