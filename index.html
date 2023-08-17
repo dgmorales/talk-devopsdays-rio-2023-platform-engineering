@@ -33,6 +33,7 @@
 				<h2>Do deploy manual ao Platform Engineering</h2>
 				<p>Como chegamos aqui?<br />E agora?</p>
 				<p>Diego Morales</p>
+				<p><a href="http://dgmorales.info/talks/devopsdays-rj-23">dgmorales.info/talks/devopsdays-rj-23</a></p>
 				<p>
 					<small>
 						<img src="images/Logo1.png" height="24" width="24" border="0" style="border:none;vertical-align:middle;" />
@@ -41,13 +42,22 @@
 						<a href="http://twitter.com/dgmorales" style="vertical-align:middle;">@dgmorales</a>
 						&nbsp;
 						<img src="images/mail3.png" border="0" style="border:none;vertical-align:middle;" />
-						<a href="mailto:dmorales@stone.com.br" style="vertical-align:middle;">dmorales@stone.com.br</a>
+						<a href="mailto:dgmorales@gmail.com" style="vertical-align:middle;">dgmorales@gmail.com</a>
 					</small>
 				</p>
+				<aside class="notes">
+					<ul>
+						<li>Um prazer e uma honra abrir os trabalhos aqui na sala rollback</li>
+						<li>Agradecer a presença de vocês, a presença de uma galera da Stone aqui prestigiando</li>
+						<li>E mandar um abraço pro Elias, que trabalha no Bradesco, tivemos um papo massa na terça no meetup Hashicorp + AWS</li>
+						<li>Slides estão disponíveis online, eu coloco muito link, preparo os meus slides para vocês entrarem depois e navegarem neles mesmo</li>
+					</ul>
+				</aside>
 			</section>
 
 			<section>
 				<h2>A linha do tempo</h2>
+				<img src="./images/timeline.png" alt="">
 			</section>
 
 			<section>
@@ -67,10 +77,31 @@
 						<li><b>Customer collaboration</b> over <em>contract negotiation</em></li>
 						<li><b>Responding to change</b> over <em>following a plan</em></li>
 					</ul>
+					<p class="source"><a href="https://agilemanifesto.org/">agilemanifesto.org</a></p>
+					<aside class="notes">
+						<ul>
+							<li>É o novo testamento do mundo da tecnologia</li>
+							<li>Tu escreve num papel, colar na tua mesa de trabalho, e lê e refletir todo dia antes de começar a trabalhar</li>
+							<li>Impacto gigantesco ao longo do tempo, em áreas além da tecnologia inclusive.</li>
+							<li>"Orçamento ágil", <a href="https://corporatefinanceinstitute.com/resources/fpa/beyond-budgeting/">beyond budget</a></li>
+						</ul>
+
+					</aside>
 				</section>
 
 				<section>
 			  	<p>Mas a agilidade não acabou com o deploy manual. Naturalmente, ela causou <b>atrito</b>.</p>
+					<aside class="notes">
+						<ul>
+							<li>isso num tempo onde o deploy manual era a norma, com certeza</li>
+							<li>e o manifesto não fala nada sobre deploy em si</li>
+							<li>mas ele é um dos fatores ali levando o mundo de desenvolvimento de software a ser mais iterativo</li>
+							<li>a ter cadência mais frequente de release, se adaptar mais rápido</li>
+							<li>isso é a base</li>
+							<li>e de repente aquela galera de ops tradicional da época tem uma galera dev querendo fazer deploy a toda hora</li>
+							<li>atrito</li>
+						</ul>
+					</aside>
 				</section>
 
 			</section>
@@ -88,6 +119,7 @@
 					<ul>
 						<li>2009
 							<ul>
+								<li>E aí muito obviamente eu acho, DevOps é a resposta disso no contexto de operações.</li>
 								<li><a href="https://www.youtube.com/watch?v=LdOe18KhtT4">10+ Deploys a day</a></li>
 								<li><a href="https://legacy.devopsdays.org/events/2009-ghent/program">1o DevOpsDays em Ghent</a>, Bélgica</li>
 							</ul>
@@ -98,13 +130,29 @@
 
 				<section>
 					<em>
-					<p>3 Ways of DevOps</p>
+					<p><a href="https://itrevolution.com/articles/the-three-ways-principles-underpinning-devops/">The Three Ways of DevOps</a></p>
 						<ul>
-							<li>System Thinking</li>
-						  <li><b>Shorten Feedback Loops</b></li>
+							<li>Flow/Systems Thinking</li>
+						  <li>Shorten Feedback Loops</li>
 							<li>Continuous Learning and Experimentation</li>
 						</ul>
+						<small>
+							<p>Dica: materiais do David Farley (autor do clássico <a href="https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912">Continuous Delivery</a>)</p>
+							<p><a href="https://www.youtube.com/c/continuousdelivery">YouTube</a>, <a href="https://www.amazon.com/Modern-Software-Engineering-Discipline-Development/dp/0137314914/ref=pd_vtp_h_pd_vtp_h_sccl_6/132-0537255-4247638">Modern Software Engineering</a> (novo livro)</p>
+						</small>
 					</em>
+					<aside class="notes">
+						<ul>
+							<li>E eu não quero ficar falando aqui sobre as características de DevOps, estamos aqui numa track avançada</li>
+							<li>Mas nessa palestra eu quero reforçar a importância dos princípios bases das coisas</li>
+							<li>E os 3 ways são minha forma favorita de resumir DevOps</li>
+							<li>Eu imagino que boa parte de vocês já conheça. Também não vou entrar neles, tá aqui para lembrar.</li>
+							<li>Se alguém não conhece ou esqueceu, taí um link para relembrar</li>
+							<li>Deixo links também pra materiais do Dave Farley, autor do clássico Continuous Delivery</li>
+							<li>Tenho consumido muito o canal de youtube dele, muito bom</li>
+							<li>Tem um livro novo também dele</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -135,7 +183,7 @@
 			</section>
 			<section>
 				<section>
-					<h2>~2014: SRE</small></h2>
+					<h2>2014: SRE</small></h2>
 					<img src="./images/sre-devops-cogs.png" height="300"/>
 					<blockquote>SRE is what happens when you ask a software engineer to design an operations function</blockquote>
 					<p class="source">Ben Treynor Sloss, fundador da SRE no Google</p>
@@ -259,7 +307,9 @@
 				<section>
 					<p>Mas não é só um excesso de ferramentas ...</p>
 					<p>Muitos de nossos ambientes exigem <b>alto contexto</b><p>
+					<small>
 					<p>Dica: Low Context DevOps (<a href="https://www.youtube.com/watch?v=fv2Xtdq-Q_s">video</a>, <a href="https://www.usenix.org/publications/loginonline/low-context-devops">blog</a>)</p>
+					</small>
 					<aside class="notes">
 					  <p>Como sair desse buraco que a gente se meteu?</p>
 						<ul>
@@ -270,7 +320,7 @@
 
 			<section>
 				<section data-background="./images/road-220058_640.jpg">
-					<h2>~202x: Platform Engineering</h2>
+					<h2>2022: Platform Engineering</h2>
 					<br/>
 					<br/>
 					<br/>
@@ -322,7 +372,11 @@
 				<section>
 					<p>A plataforma é um <b>produto</b> ...</p>
 					<p>... e seus usuários são <b>clientes</b></p>
-					(team topologies link)
+					<small>
+						<p>Dicas: Team Topologies (<a href="https://www.amazon.com/Team-Topologies-Organizing-Business-Technology/dp/1942788819">livro</a>, <a href="https://teamtopologies.com/">site</a>)</p>
+						<p><a href="https://platformengineering.org/talks-library/platform-as-a-product">Platform as Product (vídeo)</a></p>
+					</small>
+
 					<aside class="notes">
 						<ul>Um produto ...
 							<li>Aqueles serviços SaaS são componentes deste produto</li>
@@ -407,6 +461,7 @@
 				<br/>
 				<p>Diego Morales</p>
 				<p>
+				<p><a href="http://dgmorales.info/talks/devopsdays-rj-23">dgmorales.info/talks/devopsdays-rj-23</a></p>
 					<small>
 						<img src="images/Logo1.png" height="24" width="24" border="0" style="border:none;vertical-align:middle;" />
 						<img src="images/twitter-bird-white-on-blue.png" height="24" width="24" border="0"
@@ -414,7 +469,7 @@
 						<a href="http://twitter.com/dgmorales" style="vertical-align:middle;">@dgmorales</a>
 						&nbsp;
 						<img src="images/mail3.png" border="0" style="border:none;vertical-align:middle;" />
-						<a href="mailto:dmorales@stone.com.br" style="vertical-align:middle;">dmorales@stone.com.br</a>
+						<a href="mailto:dgmorales@gmail.com" style="vertical-align:middle;">dgmorales@gmail.com</a>
 					</small>
 				</p>
 			</section>
