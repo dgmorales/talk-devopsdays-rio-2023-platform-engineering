@@ -32,7 +32,6 @@
 			<section>
 				<h2>Do deploy manual ao Platform Engineering</h2>
 				<p>Como chegamos aqui? E agora?</p>
-				<br>
 				<p>Diego Morales</p>
 				<p>
 					<small>
@@ -44,8 +43,8 @@
 						<img src="images/mail3.png" border="0" style="border:none;vertical-align:middle;" />
 						<a href="mailto:dgmorales@gmail.com" style="vertical-align:middle;">dgmorales@gmail.com</a>
 					<p><a href="http://dgmorales.info/talks/devopsdays-rj-23">dgmorales.info/talks/devopsdays-rj-23</a></p>
-					</small>
 					<p class="footnote">Dica: pressione "S" para ver minhas notas</p>
+					</small>
 				</p>
 				<aside class="notes">
 					<ul>
@@ -302,8 +301,22 @@
 			</section>
 			<section>
 				<section>
-					<h2>Sobrecarga Cognitiva</h2>
-					<img src="./images/Information_overload_1200x630.jpg" height="350"/>
+					<h1>...</h1>
+					<p>respira, estamos chegando</p>
+					<aside class="notes">
+						<ul>
+							<li>Despadronização, várias soluções diferentes para a mesma coisa</li>
+							<li>Vários padrões de nomeação DNS</li>
+							<li>Várias ferramentas de observabilidade</li>
+							<li>Várias clouds e datacenters</li>
+							<li>No final das contas, ninguém queria, mas tem muito retrabalho</li>
+							<li>E aí eu tô falando de uma empresa, a Stone onde eu entrei</li>
+							<li>Mas ela é um grupo, que a essa altura já tem 4, 5, 6 empresas grandes de tecnologia dentro</li>
+							<li>Multiplica esses problemas. O retrabalho fica muito evidente</li>
+							<li>Esse não é um cenário exclusivo da Stone. Não é um caso isolado. Já falei com várias pessoas vivendo casos similares nesse mundo de tech</li>
+							<li><b>e no meio disso tudo tem...</b></li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -312,41 +325,31 @@
 					</a>
 					<aside class="notes">
 						<ul>
-							<li>CNCF foi fundada em 2015, junto com o Kubernetes 1.0</li>
-							<li>É a principal "casa" de novos projetos open source desde então</li>
-							<li>Mas também hospeda projetos mais antigos</li>
+							<li>isso aqui. CNCF landscape</li>
+							<li>principal fundação guarda chuva de projetos open source hoje em dia</li>
+							<li>são mais de mil projetos</li>
+							<li>estamos numa era onde a cada semana tu chuta uma moita e caem mais 3 novos projetos open source que podem ser úteis <b>pra ti</b></li>
+							<li>é incrível, maravilhoso em parte, mas insano também</li>
 						</ul>
 					</aside>
 				</section>
-
-				<!-- <section>
-					<img src="./images/cncf-started-projects-by-year.png"/>
-
-					<aside class="notes">
-						<ul>
-							<li>Cada vez mais software é criado. Mais projetos relevantes</li>
-							<li>Peguei no CSV do CNCF Landscape o campo "Github Start Commit Date"</li>
-							<li>Agreguei por ano</li>
-							<li>Números caindo no final fazem sentido porque projetos tão jovens ainda não foram doados para a CNCF</li>
-						</ul>
-					</aside>
-				</section>
-			-->
 
 				<section>
-					<p>Mas não é só um excesso de ferramentas ...</p>
-					<p>Muitos de nossos ambientes exigem <b>alto contexto</b><p>
-					<small>
+					<p><b>sobrecarga cognitiva</b></p>
+					<img src="./images/Information_overload_1200x630.jpg" height="300"/>
 					<p>Dica: Low Context DevOps (<a href="https://www.youtube.com/watch?v=fv2Xtdq-Q_s">video</a>, <a href="https://www.usenix.org/publications/loginonline/low-context-devops">blog</a>)</p>
-					</small>
 					<aside class="notes">
-					  <p>Como sair desse buraco que a gente se meteu?</p>
 						<ul>
+							<li>No meio de tudo isso para completar...</li>
+							<li>Talvez tu não consiga manter uma boa documentação sobre as coisas</li>
+							<li>Devs e SREs mais novos ou até antigos tem dificuldade de entender o ambiente e descobrir como fazer as coisas</li>
+							<li>O onboarding de gente nova é um inferno</li>
+							<li>É muito <b>contexto</b> que tu precisa. Informação que tu precisa para saber navegar e trabalhar dentro da empresa</li>
 						</ul>
 					</aside>
 				</section>
-			</section>
 
+			</section>
 			<section>
 				<section data-background="./images/road-220058_640.jpg">
 					<h2>2022: Platform Engineering</h2>
@@ -357,9 +360,9 @@
 					<br/>
 					<aside class="notes">
 					<small>
-						<p>Vejo Platform Engineering como fundamentalmente 3 coisas:</p>
 						<ul>
-							<li>E aqui estamos, 2020 e poucos, com Platform Engineering na curva ascendente do hype</li>
+							<li>Chegamos, finalmente, ao Platform Engineering, com ela na curva ascendente do hype</li>
+							<li>Em 2022 foi a primeira PlatformCon</li>
 							<li>O que é isso?</li>
 						</ul>
 					</small>
@@ -373,13 +376,21 @@
 						<b>enable self-service</b> capabilities for software engineering
 						organizations in the cloud-native era. Platform engineers
 						provide an <b>integrated product</b> most often referred to as an
-						<b>“<a href="https://internaldeveloperplatform.org/">Internal Developer Platform</a>”</b> covering the operational
+						<b>“<a href="https://internaldeveloperplatform.org/">Internal Developer Platform</a>” (IDP)</b> covering the operational
 						necessities of the entire lifecycle of an application.
 					</blockquote>
 					</small>
 					<p class="source">
 					<a href="https://platformengineering.org/blog/what-is-platform-engineering">platformengineering.org</a>
 					</p>
+					<aside class="notes">
+						<ul>
+							<li>Essa é uma definição, no platformengineering.org</li>
+							<li>disciplina de desenho e construção de toolchains e fluxos para auto serviço</li>
+							<li>Fala em prover um produto integrado, normalmente referido como um IDP</li>
+							<li>o público principal são os desenvolvedores, claramente</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
@@ -388,10 +399,10 @@
 					<ul>
 						<li>Vários cases de DevOps já eram construções de plataformas</li>
 						<li>Lendo sobre times SRE no Google, tu vai sempre encontrar casos de plataformas internas desenvolvidas por eles</li>
-						<li>Lembra do time que eu entrei lá no início na Stone. Era basicamente um time de plataforma.</li>
+						<li>Lembra do time que eu entrei lá no início na Stone? Era basicamente um time de plataforma.</li>
 						<li>Em grande de parte, é só uma nova maneira de comunicar. E um baita hype</li>
 						<li>Uma grande oportunidade com uma nova buzzword para novos vendors</li>
-						<li>Mas duas coisas que eu vejo como realmente importantes, e me parece "novas" de certa forma</li>
+						<li>Mas tem duas coisas que eu vejo como realmente importantes, e me parece "novas" de certa forma</li>
 						<li>A visão de produto integrado</li>
 						<li>E o foco em atacar o problema da sobrecarga cognitiva</li>
 					</ul>
@@ -412,14 +423,18 @@
 							<li>E a reflexão sobre carga cognitiva...</li>
 							<li>Deve-se muito a esse livro aí, que fala muito dessas duas coisas</li>
 							<li>Esse é um livro de cabeceira do gestor de tech hoje em dia</li>
+							<li>não é talvez uma descoberta incrível.</li>
+							<li>não é uma necessidade ou abordagem que não desse para perceber antes</li>
+							<li>Mas eu vejo como um foco importante, um olhar muito útil</li>
 							<li> Um produto ...
 						<ul>
-							<li>Aqueles serviços SaaS são componentes deste produto</li>
+							<li>Sabe aqueles serviços SaaS que a gente deixou sem dono na Stone em determinado momento?
+							<li>são componentes deste produto. Tem dono</li>
 							<li>Bem como aqueles módulos IaC de uso comum</li>
 							<li>Bem como observabilidade (que inclui logging)</li>
-							<li>Alguém precisa juntar todas coisas num pacote bem integrado, bem documentado, fácil de usar, que gere valor para quem usa. E com atenção e evolução continuada</li>
+							<li>Alguém .. precisa juntar todas coisas num pacote bem integrado, bem documentado, fácil de usar, que gere valor para quem usa. E com atenção e evolução continuada</li>
 							<li>Isso é um produto (interno)</li>
-							<li>E isso provê um ...</li>
+							<li>E ele provê um ...</li>
 						</ul></li>
 						</ul>
 					</aside>
@@ -428,6 +443,7 @@
 				<section>
 					<h3>O caminho pavimentado</h3>
 					<ul>
+						<li><em>Paved Way</em>, ou <em>Golden Path</em> ...</li>
 						<li>Para <b>reduzir o contexto</b>,</li>
 						<li>tornar <b>fácil</b> o caminho <b>correto</b>,</li>
 						<li>e dar autonomia segura</li>
@@ -439,6 +455,7 @@
 
 					<aside class="notes">
 					<ul>
+						<li><em>Paved Way</em>, ou <em>Golden Path</em> ...</li>
 						<li> Para reduzir o contexto
 						<ul>
 							<li>Centralizando e organizado informação (catálogo do que existe, e documentação)</li>
@@ -447,9 +464,7 @@
 						</ul>
 					 	</li>
 						<li>Tornar fácil o caminho correto
-							<ul>
-							<li>Para atender todos aqueles requisitos</li>
-							</ul>
+							<li>levando em conta requisitos não funcionais de segurança, governança, qualidade</li>
 						</li>
 						<li>Dar autonomia com segurança (<em>guard rails</em>)</li>
 					</ul>
@@ -470,9 +485,13 @@
 
 					<aside class="notes">
 						<ul>
+							<li>E bom ... tome nova ferramenta</li>
 							<li>Backstage open source</li>
 							<li>Humanitec capitaneando o mercado e comunidades de Platform Engineering</li>
-							<li>Uma boa documentação com padrões a serem seguidos pelo time de desenvolvimento pode resolver boa parte do problema em alguns casos</li>
+							<li>Tem cara das antigas na comunidade de agilidade e devops que fala "esse troço de platform engineering é para vender $$$". </li>
+							<li>Pessoal tentou tudo que  deu vender "ferramentas devops", agora tem algo melhor ainda</li>
+							<li>Mas também se fala que uma boa documentação com padrões a serem seguidos pelo time de desenvolvimento pode resolver boa parte do problema em alguns casos</li>
+							<li>E de fato pode ser um começo, e eu acho que em ambientes mais simples ser o suficiente por um bom tempo</li>
 						</ul>
 				 </aside>
 				</section>
@@ -481,13 +500,47 @@
 				<section>
 					<p>E os profissionais?</p>
 					<img src="./images/devops-is-dead.webp" height="350"/>
+					<small>
+					<p>Dica: <a href="https://www.youtube.com/watch?v=fY7llcRbMXM">The future of Ops is Platform Engineering</a>, da Charity Majors</p>
+					</small>
 
 					<aside class="notes">
-						<p>E para nós profissionais?</p>
-						<p>DevOps ou SRE vão morrer?</p>
-						<p>"O DevOps" ou "o SRE" vão perder o emprego?</p>
-					<p><b>Não é sobre ter 1 time de plataforma ...</b></p>
-					<p>Mas sobre tornar nossos times <b>construtores</b> dela.</p>
+						<li>Muito bem. E pra nós aqui, o que tudo isso significa?</li>
+						<li>DevOps ou SRE vão morrer?</li>
+						<li>"O DevOps" ou "o SRE" vai perder o emprego?</li>
+						<li>"Ahh, a plataforma vai dar autonomia, então não precisa mais do SRE.."</li>
+						<li>Cara, plataforma não é mágica</li>
+						<li>Aqui a minha visão tá, Diego Morales</li>
+						<li>Num lugar grande, esse modelo habilita diferentes modos de operação</li>
+						<li>A plataforma dá autonomia, sim</li>
+						<li>E para os casos mais comuns, mais simples, ou iniciais, o time de Dev toca sozinho, "You Build it, you Run it", com o apoio da plataforma. É o caso default</li>
+						<li>Mas quando o sistema é grande, crítico para a uma cia grande. Não é simples</li>
+						<li>E nesses casos, eu não consigo deixar de ver o valor, e dependendo, até a necessidade, em ter um conjunto de pessoas 'focadas na resiliência</li>
+						<li>E aí SRE eu acho que faz sentido. E talvez tu nem chame assim. Não importa. </li>
+						<li><b>Os princípios ... esses que eu venho falando aqui ... estão lá, e eles são válidos, úteis.</b></li>
+						<li>Na Stone, hoje, a gente está neste modelo. Em que tem os SREs na ponta ainda, e tem um time de plataforma na retaguarda</li>
+						<li>A gente tá tendo que redividir e reorganizar as pessoas, e ainda temos muitas ineficiências, então é um processo dolorido também.</li>
+						<li>Não é fácil</li>
+						<li>e não tem nada cravado na pedra sobre o futuro</li>
+						<li>eu acredito nessa visão que eu falei pq eu acho que faz sentido</li>
+						<li>talvez no final fiquem poucos times SREs só na área mais criticas. Não sabemos</li>
+						<li>A mentalidade de uma pessoa nessa área de DevOps ou SRE já precisava ser</li>
+						<li>eu automatizo o que eu faço hoje, e aprendo uma coisa nova amanhã</li>
+						<li>Continua assim.</li>
+						<li>Platform Engineering põe algumas ideias em foco, para com sorte, a gente fazer o nosso trabalho melhor, e menos sobrecarregado</li>
+						<li>Como última dica, fica aí também uma talk da Charity Majors, sou muito fão dela, onde ela fala também sobre o perfil desse trabalho em platform engineering</li>
+						<li>Que é também um assunto interessante, mas acho que eu preciso abrir aqui para perguntas</li>
+						<li>Então a gente continua aqui durante o evento, no corredor e nos open spaces</li>
+						<!--
+						<ul>
+						<li>Eu continuo vendo 3 papéis distintos nesse cenário de ops. Como eu via lá em 2016</li>
+						<li>Tu tem uma galera de infra mais hardcore. Compute, Network, DB, Storage</li>
+						<li>Tu tem uma galera conectando isso com o cliente. CI/CD, um IDP/portal, ferramentas de observabilidade</li>
+						<li>E sim, pelo menos em casos mais complexos, tu vai continuar tendo uma galera do lado do cliente, que manja mais de tudo isso.</li>
+						<li>Talvez seja uns devs que manjam mais de devops, talvez sejam SREs, que precisam cada vez mais manjar de código, isso não é novidade.</li>
+						</ul>
+						-->
+
 				 </aside>
 				</section>
 			</section>
