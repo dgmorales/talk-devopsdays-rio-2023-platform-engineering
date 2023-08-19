@@ -192,18 +192,16 @@
 						<li>E tínhamos uma visão de produto, que era muito legal.</li>
 						<li>Mas...
 							<ul>
-									<li>Quando rolaram umas turbulências por conta de um grande incidente que a gente teve em 2017</li>
-									<li>gente mudou bastante tentando quebrar o nosso silo</li>
-									<li>E gente via cada produto daqueles como algo isolado, e não um conjunto integrado</li>
-									<li>E aí foi mais fácil ir perdendo essa visão de produto, e passar a tratar "apenas" como um serviço.</li>
-									<li>E aí um serviço... tu dá mais uns passos e tu tá focando mais nas tuas necessidades de provedor do serviço do que de do usuário</li>
+									<li>Mas a gente via cada produto daqueles como algo isolado, e não um conjunto integrado</li>
+									<li>e aí quando gente mudou, porque fomos vistos como um silo, e quebramos ele ...</li>
+									<li>... aí foi mais fácil ir perdendo essa visão de produto, e passar a tratar "apenas" como um serviço.</li>
+									<li>E aí um serviço... tu dá mais uns passos e tu tá focando mais nas tuas necessidades de provedor do serviço do que nas dos usuários dele</li>
 									<li>Ferramenta X ou ferramenta Y é mais fácil de sustentar</li>
 									<li>ou é mais barata</li>
 									<li>muda mais fácil de time, de repente o outro time quer trocar pq tem mais skill</li>
 							</ol>
 						</li>
-						<li>A experiência de quem consome ficou em segundo plano</li>
-
+						<li>A experiência de quem consome o serviço ficou em segundo plano</li>
 					</ul>
 				</aside>
 				</section>
@@ -285,12 +283,14 @@
 						<li>E a criação de infraestrutura era ainda muita dor muito grande. Demorava muito</li>
 						<li>Desde os tempos do nosso time devops, a gente sentia a falta de pessoas com esse skill DevOps nos times de dev</li>
 						<li>Para orientar e propagar a adoção das coisas que a gente tava fazendo.</li>
+						<li>E sentia falta de um contato mais direto com os devs</li>
 						<li>Acabou casando com a ideia de adoção de um modelo SRE para a Stone</li>
 						<li>Times que ainda são de organização de infra, mas estão lá pertinho dos times de produto</li>
 						<li>segmentados por área de produto</li>
 						<li>Só que para isso acontecer, a gente acabou movendo aquelas pessoas que eram daquele "time DevOps"
 							para esses times SRE
 						<ul>
+							<li>a gente precisava enxugar aquela área central</li>
 							<li>E aí tomamos algumas decisões...</li>
 							<li>CI/CD era SaaS agora (Azure DevOps). "SaaS não precisa de um time mantendo ...</li>
 							<li>Pro Tip: não façam isso numa empresa grande</li>
@@ -411,7 +411,7 @@
 						<li>Lembra do time que eu entrei lá no início na Stone? Era basicamente um time de plataforma.</li>
 						<li>Em grande de parte, é só uma nova maneira de comunicar. E um baita hype</li>
 						<li>Uma grande oportunidade com uma nova buzzword para novos vendors</li>
-						<li>Mas tem duas coisas que eu vejo como realmente importantes, e me parece "novas" de certa forma</li>
+						<li>Mas tem duas coisas que eu vejo como realmente importantes, e me parecem "novas" de certa forma</li>
 						<li>A visão de produto integrado</li>
 						<li>E o foco em atacar o problema da sobrecarga cognitiva</li>
 					</ul>
@@ -509,46 +509,64 @@
 				<section>
 					<p>E os profissionais?</p>
 					<img src="./images/devops-is-dead.webp" height="350"/>
+					<aside class="notes">
+						<small>
+						<ul>
+						<li>Muito bem. E pra nós aqui, o que tudo isso significa?</li>
+						<li>DevOps ou SRE vão morrer? Vão perder o emprego?</li>
+
+						<li>Aqui a minha visão tá, Diego Morales</li>
+						<li>Eu continuo vendo 3 papéis distintos. Como eu via lá em 2016</li>
+						<li>Tu tem uma galera de infra mais hardcore. Compute, Network, DB, Storage</li>
+						<li>Usando cloud, essa é uma camada fina ou até inexistente</li>
+						<li>tem gente conectando isso com o cliente. CI/CD, um IDP/portal</li>
+						<li>... Padrões de GitOps e IaC, Terraform, <b>talks da Julia, e da Juliana e da Hellen</b></li>
+						<li>Ferramentas de observabilidade, <b>Tatiane e a Giovana</b></li>
+						<li>agora tratando essas coisas como produtos, plataformas</li>
+
+						<li>e ...</li>
+						<li>tu tem o lado que consome e aplica isso</li>
+						<li>para os casos mais comuns e simples, "You Build it, you Run it"</li>
+						<li>mas para casos mais complexos, a galera vai ter que manjar mais</li>
+						<li>de devops, de cloud, do que tá por baixo do capô do produto</li>
+						<li>na hora que dá problema, a abstração vaza. É assim com cloud hoje!</li>
+
+						<li>Pq que com plat eng a gente alcançaria uma mágica que nem as big techs conseguiram?</li>
+						<li>E aí nesses casos complexos um time SRE by-the-book talvez faça sentido</li>
+						<li>Ou algo mais consultivo talvez.</li>
+						<li>Depende do perfil dos teus times de desenvolvimente, da cultura dos times</li>
+						</ul>
+						</small>
+				 </aside>
+				</section>
+
+				<section>
+					<h3>Futuro? Passado?</h3>
+					<img src="./images/back-to-the-future-3.webp" height="300"/>
+					<p>Uma cara nova, impulsionada pelos <b>princípios</b> antigos</p>
 					<small>
-					<p>Dica: <a href="https://www.youtube.com/watch?v=fY7llcRbMXM">The future of Ops is Platform Engineering</a>, da Charity Majors</p>
 					</small>
 
 					<aside class="notes">
-						<li>Muito bem. E pra nós aqui, o que tudo isso significa?</li>
-						<li>DevOps ou SRE vão morrer?</li>
-						<li>"O DevOps" ou "o SRE" vai perder o emprego?</li>
-						<li>"Ahh, a plataforma vai dar autonomia, então não precisa mais do SRE.."</li>
-						<li>Cara, plataforma não é mágica</li>
-						<li>Aqui a minha visão tá, Diego Morales</li>
-						<li>Num lugar grande, esse modelo habilita diferentes modos de operação</li>
-						<li>A plataforma dá autonomia, sim</li>
-						<li>E para os casos mais comuns, mais simples, ou iniciais, o time de Dev toca sozinho, "You Build it, you Run it", com o apoio da plataforma. É o caso default</li>
-						<li>Mas quando o sistema é grande, crítico para a uma cia grande. Não é simples</li>
-						<li>E quando não é simples, eu não consigo deixar de ver o valor, em ter um conjunto de pessoas focadas na resiliência</li>
-						<li>E aí SRE eu acho que pode fazer sentido. Ou algo mais consultivo talvez. Em vez de fazer a sustentação do produto. E talvez tu nem chame assim. Não importa. </li>
-						<li><b>Os princípios ... esses que eu venho falando aqui ... estão lá, e eles são válidos, úteis.</b></li>
-						<li>Na Stone, hoje, a gente está neste modelo. Em que tem os SREs na ponta ainda, e tem um time de plataforma na retaguarda</li>
-						<li>A gente tá tendo que redividir e reorganizar as pessoas, e ainda temos muitas ineficiências, então é um processo dolorido também.</li>
-						<li>Não é fácil</li>
+						<small><ul>
+						<li>Na Stone, hoje, a gente está neste momento neste modelo, com 3 papéis. SREs na ponta ainda</li>
+						<li>A gente tá tendo que redividir e reorganizar as pessoas, formou a nossa área de plat eng, tem pouco tempo</li>
+						<li>Não é um processo fácil, sem dor</li>
 						<li>e não tem nada cravado na pedra sobre o futuro</li>
-						<li>eu acredito nessa visão que eu falei pq eu acho que faz sentido</li>
-						<li>talvez no final fiquem poucos times SREs só na área mais criticas. Não sabemos</li>
-						<li>A mentalidade de uma pessoa nessa área de DevOps ou SRE já precisava ser</li>
-						<li>eu automatizo o que eu faço hoje, e aprendo uma coisa nova amanhã</li>
-						<li>Continua assim.</li>
-						<li>Platform Engineering põe algumas ideias em foco, para com sorte, a gente fazer o nosso trabalho melhor, e menos sobrecarregado</li>
-						<li>Como última dica, fica aí também uma talk da Charity Majors, sou muito fão dela, onde ela fala também sobre o perfil desse trabalho em platform engineering</li>
-						<li>Que é também um assunto interessante, mas acho que eu preciso abrir aqui para perguntas</li>
-						<li>Então a gente continua aqui durante o evento, no corredor e nos open spaces</li>
-						<!--
-						<ul>
-						<li>Eu continuo vendo 3 papéis distintos nesse cenário de ops. Como eu via lá em 2016</li>
-						<li>Tu tem uma galera de infra mais hardcore. Compute, Network, DB, Storage</li>
-						<li>Tu tem uma galera conectando isso com o cliente. CI/CD, um IDP/portal, ferramentas de observabilidade</li>
-						<li>E sim, pelo menos em casos mais complexos, tu vai continuar tendo uma galera do lado do cliente, que manja mais de tudo isso.</li>
-						<li>Talvez seja uns devs que manjam mais de devops, talvez sejam SREs, que precisam cada vez mais manjar de código, isso não é novidade.</li>
-						</ul>
-						-->
+						<li>a gente vai ter que ir descobrindo o que tá funcionando ou não</li>
+
+						<li>Mas o que importa é ...</li>
+						<li><b>Os princípios ... esses que eu venho falando aqui ... estão lá, e eles são válidos, úteis.</b></li>
+						<li>aquelas ideias ali não estão obsoletas</li>
+						<li>todas elas fazem parte do estado da arte do desenvolvimento de software</li>
+
+						<li>Quando eu penso nesse timeline, e no que vi e vivi na Stone</li>
+						<li>me parece tão óbvio e necessário o momento que a gente tá agora</li>
+						<li>Platform Engineering é importante, pq ela põe em foco</li>
+						<li>"Pessoa, presta atenção <b>nisso</b>"</li>
+						<li>Experiência do cliente. Reduzir a carga cognitiva. É um produto.</li>
+						<li>As ideias não são novas, o foco é. E ele pode nos ajudar a fazer o nosso trabalho melhor, e menos sobrecarregado</li>
+						</ul></small>
 
 				 </aside>
 				</section>
@@ -570,6 +588,23 @@
 						<a href="mailto:dgmorales@gmail.com" style="vertical-align:middle;">dgmorales@gmail.com</a>
 					</small>
 				</p>
+				<aside class="notes">
+					<ul>
+						<li>Acho que eu tenho que abrir para perguntas, então</li>
+						<li>continuamos o papo aqui durante o evento, no corredor e nos open spaces</li>
+					</ul>
+				</aside>
+			</section>
+
+			<section>
+				<h3>Cena pós créditos</h3>
+				<p>Veja também ...</p>
+				<ul>
+					<li><a href="https://www.youtube.com/watch?v=fY7llcRbMXM">The future of Ops is Platform Engineering</a>, da Charity Majors</li>
+					<li><a href="https://queue.acm.org/detail.cfm?id=3595878">DevEx: What Actually Drives Productivity</a></li>
+					<li><a href="https://web.devopstopologies.com/">DevOps topologies</a></li>
+					<li><a href="https://stackoverflow.blog/2023/03/20/who-builds-it-and-who-runs-it-sre-team-topologies/">SRE team topologies</a></li>
+				</ul>
 			</section>
 
 		</div>
