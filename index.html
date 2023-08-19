@@ -51,7 +51,8 @@
 						<li>Um prazer e uma honra abrir os trabalhos aqui na sala rollback</li>
 						<li>Agradecer a presença de vocês, a presença de uma galera da Stone aqui prestigiando</li>
 						<li>E mandar um abraço pro Elias, que trabalha no Bradesco, tivemos um papo massa na terça no meetup Hashicorp + AWS</li>
-						<li>Slides estão disponíveis online, eu coloco muito link, preparo os meus slides para vocês entrarem depois e navegarem neles mesmo</li>
+						<li>Slides estão disponíveis online, eu coloco muito referência</li>
+						<li>preparo os meus slides para vocês entrarem depois e navegarem nelas</li>
 					</ul>
 				</aside>
 			</section>
@@ -61,13 +62,14 @@
 				<img src="./images/timeline.png" alt="">
 				<aside class="notes">
 					<ul>
-						<li>A ideia dessa palestra é traçar uma linha do tempo...</li>
 						<li>Esse é o slide de "Agenda"</li>
+						<li>A ideia dessa palestra é traçar uma linha do tempo...</li>
 						<li>E através dela a gente entender o surgimento deste termo Platform Engineering</li>
-						<li>Conhecer um pouco ele</li>
-						<li>E entrar na discussão que eu vejo acontecendo um tanto ...</li>
+						<li>E conhecer um pouco ele</li>
+						<li>Eu vivi essa jornada dentro da Stone, como tech lead, como manager, como contribuir individual</li>
+						<li>E aí a gente vai poder emedar na discussão que eu vejo acontecendo um tanto ...</li>
 						<li>Plat Eng vai acabar com o SRE, com o DevOps? Muda tudo? etc.</li>
-						<li>A gente pode começar aqui e terminar no Open Spaces, se vocês curtirem</li>
+						<li>Poderemos continuar ela no Open Spaces, se vocês curtirem</li>
 					</ul>
 				</aside>
 			</section>
@@ -97,11 +99,10 @@
 					<aside class="notes">
 						<ul>
 							<li>Eu penso nele como uma tábua de mandamentos do mundo da tecnologia</li>
-							<li>Tu pode escrever num papel, colar na tua mesa de trabalho, e lê e refletir todo dia antes de começar a trabalhar</li>
-							<li>Impacto gigantesco ao longo do tempo, em áreas além da tecnologia inclusive.</li>
-							<li>"Orçamento ágil", <a href="https://corporatefinanceinstitute.com/resources/fpa/beyond-budgeting/">beyond budget</a></li>
+							<li>Impacto gigantesco ao longo do tempo, até em áreas além da tecnologia.</li>
+							<li>Tem "Orçamento ágil", <a href="https://corporatefinanceinstitute.com/resources/fpa/beyond-budgeting/">beyond budget</a></li>
 							<li>Eu não vou ler, tem o link ali para a página...</li>
-							<li>Mas o meu ponto aqui é que esses pontos aí naturalmente levam a uma iteração mais frequente</li>
+							<li>E o meu objetivo aqui é chamar a atenção de que esses pontos aí naturalmente levam a uma iteração mais frequente</li>
 							<li>Mais comunicação com o cliente, mais adaptação, mais <b>deploys</b>...</li>
 						</ul>
 
@@ -136,10 +137,10 @@
 					<ul>
 						<li>2009
 							<ul>
-								<li>vamos para 2009 o ano do </li>
+								<li>E o surgimento do DevOps é uma consequência natural desse atrito</li>
+								<li>Em 2009 tivemos</li>
 								<li><a href="https://legacy.devopsdays.org/events/2009-ghent/program">1o DevOpsDays em Ghent</a>, Bélgica</li>
 								<li>e da talk <a href="https://www.youtube.com/watch?v=LdOe18KhtT4">10+ Deploys a day</a></li>
-								<li>DevOps é a resposta para esse atrito trazido pela agilidade.</li>
 								<li>E os dois, DevOps e agilidade, são hoje para mim praticamente indiscerníveis um do outro</li>
 							</ul>
 						</li>
@@ -165,11 +166,12 @@
 							<li>E eu não quero ficar falando aqui sobre as características de DevOps, estamos aqui numa track avançada</li>
 							<li>Mas nessa palestra eu quero reforçar a importância dos princípios bases das coisas</li>
 							<li>E os 3 ways são minha forma favorita de resumir DevOps</li>
-							<li>Eu imagino que boa parte de vocês já conheça. Também não vou entrar neles, tá aqui para lembrar.</li>
-							<li>Se alguém não conhece ou esqueceu, taí um link para relembrar</li>
+							<li>pensamento sistêmico, pensar no fluxo</li>
+							<li>reduzir os ciclos de feedbacks, ter autonomia, falhar rápido</li>
+							<li>experimentar e aprender continuamente, de forma organizada</li>
+							<li>Eu imagino que boa parte de vocês já conheça. Tá aqui para lembrar.</li>
+							<li>Se alguém não conhece ou esqueceu, tem o link</li>
 							<li>Deixo links também pra materiais do Dave Farley, autor do clássico Continuous Delivery</li>
-							<li>Tenho consumido muito o canal de youtube dele, muito bom</li>
-							<li>Tem um livro novo também dele</li>
 						</ul>
 					</aside>
 				</section>
@@ -185,19 +187,23 @@
 						<li>Fazia menos de um ano que a Stone tinha começado a sair do deploy manual, o dev com o pendrive</li>
 						<li>Era o GoCD, o primeiro sistema de pipelines de CI/CD</li>
 						<li>Além do deploy, outros focos eram logging de aplicações (ElasticSearch), containers (Tsuru), e Infra as Code (Ansible e Terraform)</li>
-						<li>Todo mundo chamava a gente de time DevOps e a gente sabia que isso era um anti-pattern, se não fosse algo temporário</li>
-						<li>A gente sentia uma dor da falta de pessoas com esse skill DevOps nos times de dev</li>
-						<li>Para orientar e propagar a adoção das coisas que a gente tava fazendo</li>
-						<li>E tínhamos uma visão de produto, que era bem legal. Mas...
-							<ol>
-									<li>Cada foco ali era visto como um produto isolado, e não um conjunto integrado</li>
-									<li>Caímos no anti-padrão. Em um momento de turbulência, acabamos sendo vistos como mais um silo, num lugar que já tinha silos demais</li>
-									<li>A gente mudou um monte de coisa, tentou quebrar os silos, e conseguiu.</li>
-									<li>Mas nesse caminho até aquela visão isolada de produto se perdeu</li>
-									<li>Passamos a tratar "apenas" como um serviço. Isso teve consequências que
-										eu vou retomar mais na frente.</li>
+						<li>Todo mundo chamava a gente de time DevOps e a gente sabia que isso era um anti-pattern</li>
+						<li>O risco de ser visto como mais um silo, e isso aconteceu depois</li>
+						<li>E tínhamos uma visão de produto, que era muito legal.</li>
+						<li>Mas...
+							<ul>
+									<li>Quando rolaram umas turbulências por conta de um grande incidente que a gente teve em 2017</li>
+									<li>gente mudou bastante tentando quebrar o nosso silo</li>
+									<li>E gente via cada produto daqueles como algo isolado, e não um conjunto integrado</li>
+									<li>E aí foi mais fácil ir perdendo essa visão de produto, e passar a tratar "apenas" como um serviço.</li>
+									<li>E aí um serviço... tu dá mais uns passos e tu tá focando mais nas tuas necessidades de provedor do serviço do que de do usuário</li>
+									<li>Ferramenta X ou ferramenta Y é mais fácil de sustentar</li>
+									<li>ou é mais barata</li>
+									<li>muda mais fácil de time, de repente o outro time quer trocar pq tem mais skill</li>
 							</ol>
 						</li>
+						<li>A experiência de quem consome ficou em segundo plano</li>
+
 					</ul>
 				</aside>
 				</section>
@@ -211,11 +217,12 @@
 					<p class="source">Ben Treynor Sloss, fundador da SRE no Google</p>
 					<aside class="notes">
 						<ul>
-							<li>Vamo para 2014</li>
-							<li>Ano da primeira <a href="https://www.usenix.org/conference/srecon14/program">SREcon</a></li>
-							<li>2016: o primeiro dos <em><a href="https://sre.google/books/">SRE books</a></em> é lançado</li>
-							<li>2003: é o início do SRE no Google</li>
+							<li>Bom, vamos para nossa próxima parada</li>
+							<li>Em 2014 aconteceu a da primeira <a href="https://www.usenix.org/conference/srecon14/program">SREcon</a></li>
+							<li>SRE é o que acontece quando tu pede para um engenheiro de software montar um time de operações</li>
+							<li>Começou em 2003 lá</li>
 							<li>Mas pro resto do mundo ele veio depois</li>
+							<li>2016: o primeiro dos <em><a href="https://sre.google/books/">SRE books</a></em> é lançado</li>
 						</ul>
 					</aside>
 				</section>
@@ -270,13 +277,15 @@
 				<p>Em 2019, naquela mesma <em>Fintech</em> no Rio de Janeiro ...</p>
 				<aside class="notes">
 					<ul>
+
 						<li>Voltemos para a Stone, capítulo primeiro da nossa jornada SRE</li>
 						<li>A adoção de containerização e infra as code era lenta ainda,
 							e também a adoção de melhores práticas de logging e de CI/CD pelos times</li>
-						<li>A gente sentia falta daquele skill devops nos times de dev. Acessos a produção centralizados em infra ainda.</li>
-						<li>E assim a criação de infraestrutura era ainda muita dor muito grande. Demorava muito</li>
-						<li>Já tínhamos um plano de levar pessoas com um perfil mais "DevOps" para os times de dev...</li>
-						<li>E para resumir isso casou com a ideia de adoção de um modelo SRE para a Stone</li>
+						<li>autonomia baixa, os acessos a produção muito centralizados em infra</li>
+						<li>E a criação de infraestrutura era ainda muita dor muito grande. Demorava muito</li>
+						<li>Desde os tempos do nosso time devops, a gente sentia a falta de pessoas com esse skill DevOps nos times de dev</li>
+						<li>Para orientar e propagar a adoção das coisas que a gente tava fazendo.</li>
+						<li>Acabou casando com a ideia de adoção de um modelo SRE para a Stone</li>
 						<li>Times que ainda são de organização de infra, mas estão lá pertinho dos times de produto</li>
 						<li>segmentados por área de produto</li>
 						<li>Só que para isso acontecer, a gente acabou movendo aquelas pessoas que eram daquele "time DevOps"
@@ -286,14 +295,14 @@
 							<li>CI/CD era SaaS agora (Azure DevOps). "SaaS não precisa de um time mantendo ...</li>
 							<li>Pro Tip: não façam isso numa empresa grande</li>
 							<li>IaC é uma prática, não precisa de um time dono. Módulos comuns serão mantidos comunitariamente. Mais um erro.</li>
-							<li>O logging continuou sendo mantido por outro time</li>
-							<li>E o Tsuru acabou sendo abandonado em favor do Kubernetes
+							<li>O Tsuru acabou sendo abandonado em favor do Kubernetes
 								(abraçado pelas Clouds, padrão de fato para orquestração de containers)
 							</li>
+							<li>Como eram só serviços isolados um do outro, essa decisões pareciam simples</li>
 						</ul>
 						</li>
-						<li>Ajudou em várias coisas, desafogou a criação de infra. Tornou cloud, IaC, e containers a norma, em vez do perfil on prem old school de antes</li>
-						<li>Mas ... (descentralizou e fragmentou. Éramos um chapter, mas no meio das correrias do dia a dia, cada um focou mais na sua área)</li>
+						<li>SRE nos Ajudou em várias coisas, descentralizou, nos aproximou dos devs, desafogou a criação de infra. Tornou cloud, IaC, e containers a norma, em vez do perfil on prem old school de antes</li>
+						<li>Mas ... (fragmentou. Éramos um chapter, deviamos nos alinhar, mas no meio das correrias do dia a dia, cada um focou mais na sua área)</li>
 					</ul>
 				</aside>
 				</section>
@@ -361,7 +370,7 @@
 					<aside class="notes">
 					<small>
 						<ul>
-							<li>Chegamos, finalmente, ao Platform Engineering, com ela na curva ascendente do hype</li>
+							<li>Platform Engineering chega para nos salvar</li>
 							<li>Em 2022 foi a primeira PlatformCon</li>
 							<li>O que é isso?</li>
 						</ul>
@@ -515,8 +524,8 @@
 						<li>A plataforma dá autonomia, sim</li>
 						<li>E para os casos mais comuns, mais simples, ou iniciais, o time de Dev toca sozinho, "You Build it, you Run it", com o apoio da plataforma. É o caso default</li>
 						<li>Mas quando o sistema é grande, crítico para a uma cia grande. Não é simples</li>
-						<li>E nesses casos, eu não consigo deixar de ver o valor, e dependendo, até a necessidade, em ter um conjunto de pessoas 'focadas na resiliência</li>
-						<li>E aí SRE eu acho que faz sentido. E talvez tu nem chame assim. Não importa. </li>
+						<li>E quando não é simples, eu não consigo deixar de ver o valor, em ter um conjunto de pessoas focadas na resiliência</li>
+						<li>E aí SRE eu acho que pode fazer sentido. Ou algo mais consultivo talvez. Em vez de fazer a sustentação do produto. E talvez tu nem chame assim. Não importa. </li>
 						<li><b>Os princípios ... esses que eu venho falando aqui ... estão lá, e eles são válidos, úteis.</b></li>
 						<li>Na Stone, hoje, a gente está neste modelo. Em que tem os SREs na ponta ainda, e tem um time de plataforma na retaguarda</li>
 						<li>A gente tá tendo que redividir e reorganizar as pessoas, e ainda temos muitas ineficiências, então é um processo dolorido também.</li>
